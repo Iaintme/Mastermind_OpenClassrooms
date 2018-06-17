@@ -12,7 +12,7 @@ public abstract class GuesserC {
 
 	public abstract Code guessCode();
 
-	public static Object reset(Code c) {
-		return reset(c);
+	public static Object reset(Code targetCode) {
+		return reset(targetCode);
 	}
 }

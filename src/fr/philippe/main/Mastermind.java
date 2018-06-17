@@ -8,6 +8,7 @@ import fr.philippe.automatic.GeneratorA;
 import fr.philippe.automatic.GuesserA;
 import fr.philippe.human.GeneratorH;
 import fr.philippe.human.GuesserH;
+import fr.philippe.model.Color;
 import fr.philippe.model.codeAnswer;
 import fr.philippe.model.bean.Code;
 import fr.philippe.model.bean.GeneratorC;
@@ -47,10 +48,10 @@ public class Mastermind {
 	        generator = Mastermind.humanGenerator ? new GeneratorH(view) : new GeneratorA();
 		}
 
-	    /**
-		*	Play one round of the game
-		*	@return int: The rounds played until the correct code was guessed, -1 if guessed incorrectly
-		*/
+//	    /**
+//		*	Play one round of the game
+//		*	@return int: The rounds played until the correct code was guessed, -1 if guessed incorrectly
+//		*/
 	    public int playGame(Code targetCode){
 	        boolean won = false;
 			GuesserC.reset(targetCode);
@@ -119,7 +120,14 @@ public class Mastermind {
 
 	    public static void testSuit(){
 	        Mastermind game = new Mastermind();
-	        GuesserA ag = new GuesserA(null);
+	        GuesserA ag = new GuesserA(null) {
+				
+				@Override
+				public ArrayList<Code> generateTargetCode() {
+					generateCode(new ArrayList<Color>(), config.getCodeLength());
+					return possibleCode;
+				}
+			};
 			ArrayList<Code> allCodes = ag.generateCode(config.getCodeLength());
 			int gamesPlayed = 0;
 			int totalGuesses = 0;

@@ -1,5 +1,7 @@
 package fr.philippe.model.bean;
 
+import java.util.ArrayList;
+
 import fr.philippe.model.codeAnswer;
 
 public abstract class GeneratorC {
@@ -23,5 +25,5 @@ public abstract class GeneratorC {
 		return setTargetCode(newTargetCode);
 	}
 	
-	public abstract void generateTargetCode();
+	public abstract ArrayList<Code> generateTargetCode();
 }

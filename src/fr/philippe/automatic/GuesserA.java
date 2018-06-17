@@ -6,11 +6,12 @@ import java.util.concurrent.ThreadLocalRandom;
 import fr.philippe.model.Color;
 import fr.philippe.model.codeAnswer;
 import fr.philippe.model.bean.Code;
+import fr.philippe.model.bean.GeneratorC;
 import fr.philippe.properties.config;
 
-public class GuesserA {
+public abstract class GuesserA extends GeneratorC{
 
-	private ArrayList<Code> possibleCode;
+	protected ArrayList<Code> possibleCode;
 	private Code lastCode;
 	private Color colors;
 	

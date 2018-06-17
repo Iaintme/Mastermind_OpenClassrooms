@@ -2,10 +2,11 @@ package fr.philippe.human;
 
 import fr.philippe.model.Color;
 import fr.philippe.model.bean.Code;
+import fr.philippe.model.bean.GeneratorC;
 import fr.philippe.properties.config;
 import fr.philippe.view.View;
 
-public class GuesserH {
+public abstract class GuesserH extends GeneratorC{
 	
 	private View view;
 	private Color colors;
